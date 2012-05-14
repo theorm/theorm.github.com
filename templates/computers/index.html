@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Roman Kalyakin{% endblock %}
+{% block description %}Roman Kalyakin. Sofware engineer.{% endblock %}
+
+{% block body %}
+<body id="computers">
+	<header>
+		<h1>Roman Kalyakin</h1>
+	</header>
+	<article>
+		<ul>
+			<li>I create <em>rich web applications</em>, <em>APIs</em> and <em>backends</em>.</li>
+			<li>I use <em>Python</em>, <em>Javascript</em>, <em>NoSQL</em> and <a href="{{personal.links.cv}}" alt="Roman Kalyakin CV">a dozen of other technologies</a>.</li>
+			<li>I built 
+				{% for name,link in personal.projects.items() %}
+				<a href="{{link}}">{{name}}</a>{% if not loop.last %},{% endif %}
+				{% endfor %}
+				and can build <em>great software</em> for <em>you</em>.
+			</li>
+			<li>See my <em>code</em> on <a href="{{personal.links.github}}" alt="Roman Kalyakin on GitHub">GitHub</a> and <em>CV</em> on <a href="{{personal.links.cv}}">Careers</a>.</li>
+		</ul>
+	</article>
+	<footer>
+		{% include "personal_links.html" %}
+	</footer>
+</body>
+{% endblock %}

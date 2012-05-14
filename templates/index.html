@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Roman Kalyakin{% endblock %}
+{% block description %}Roman Kalyakin. Computers. Photography.{% endblock %}
+
+{% block body %}
+<body id="landing">
+	<header>
+		<h1>Roman Kalyakin</h1>
+	</header>
+	<nav id="content">
+		<ul>
+			<li>
+				<a href="/computers" class="button image"><img src="/static/img/laptop64_w.png" alt="Computers button"/></a>
+				<label>Computers</label>
+			</li>
+			<li>
+				<a href="{{personal.links.photography}}" class="button image"><img src="/static/img/camera64_w.png" alt="Photography button"/></a>
+				<label>Photography</label>
+			</li>
+		</ul>
+	</nav>
+	<footer>
+		{% include "personal_links.html" %}		
+	</footer> 
+</body>
+{% endblock %}

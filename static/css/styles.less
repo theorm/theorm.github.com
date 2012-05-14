@@ -1,0 +1,191 @@
+@import "reset.less";
+@import "mixins.less";
+
+@import "fonts.less";
+
+@baseFontSize: 13px;
+@baseLineHeight: 1.6em;
+@btnBackground: #111;
+@footerHeight: 60px;
+@bgColor: #f4eee7;
+
+@fontColor: #111;
+@shadeColor: lighten(@fontColor,60%);
+@white: #fff;
+@linkColor: #BE1E2D;
+
+@xtraFont: 14px Arial-italic, sans-serif;
+
+body {
+    background-color: @bgColor;
+    background-image: url('/static/img/squares.png');
+    font:  23px/26px AmaranthRegular, Verdana, sans-serif;
+    line-height: @baseLineHeight; 
+    color: @fontColor;
+    font-size: @baseFontSize;
+    
+    em {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.1em;
+        color: lighten(@fontColor, 20%);
+    }
+    
+    a {
+        text-decoration: none;
+        color: @linkColor;
+        &:hover {
+            color: lighten(@linkColor,20%);
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: @footerHeight;
+    text-align: right;
+    width: auto;
+    ul {
+        margin-right: 30px;
+        li {
+            display: inline-block;
+            list-style: none;
+            margin: 0 5px;
+            a {
+                display: block;
+                height: 42px;
+                width: 42px;
+                .border-radius(21px);
+                background-color: rgba(0,0,0,0.1);
+                &:hover {
+                    background-color: rgba(0,0,0,0.2);
+                }
+                img {
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+
+
+body#landing {
+    
+    text-shadow: 1px 1px 2px darken(@white,30%);
+    
+    .button {
+        background-color: @btnBackground;
+    	display: inline-block;
+    	cursor: pointer;
+        .border-radius(10px);
+        .box-shadow(3px 4px 10px rgba(0,0,0,.4));
+    	&:hover {
+        	text-decoration: none;
+    	}    	
+    	&:active {
+        	position: relative;
+        	top: 1px;
+        }
+        
+        &.image {
+        	&:hover {
+                background-color: lighten(@btnBackground,20%);
+            }
+            &:active {
+                .box-shadow(2px 3px 10px rgba(0,0,0,.4));    	
+            }            
+        }
+    }
+    
+    text-align: center;
+    margin: 0 auto;
+    header {
+        margin-top: 10%;
+        h1 {
+            font-size: floor(@baseFontSize * 3);
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: floor(@baseFontSize * 1.5);
+            font-style: italic;
+            font-weight: normal;
+            color: @shadeColor;
+        }
+    }
+    nav {
+        margin-top: 5%;
+        font-size: floor(@baseFontSize * 1.5);
+        ul {
+            li {
+                width: 110px;
+                display: inline-block;
+                list-style: none;
+                margin: 0 20px;
+                a {
+                    width: 80px;
+                    height: 80px;
+                    img {
+                        margin: 8px;
+                    }
+                    margin-bottom: 10px;                    
+                }
+                label {
+                    display: block;
+                }
+                &.and {
+                    font-style: italic;
+                    color: @shadeColor;
+                }
+            }
+        }
+    }    
+    
+}
+
+body#computers {
+    padding: 10px;
+    margin-left: 15%;
+    header {
+        margin-top: 10%;
+        h1 {
+            font-size: floor(@baseFontSize * 3);
+        }
+    }
+    article {
+        margin-top: 5%;
+        margin-left: 30px;
+        font-size: floor(@baseFontSize * 1.4);
+        ul {
+            li {
+                line-height: 30px;
+            }
+        }
+    }    
+}
+
+@media (max-height:300px) {
+    body#landing {
+        footer {
+            position: relative;
+            margin-top: 30px;
+        }        
+    }
+}
+
+@media (max-height:420px) {
+    body#computers {
+        footer {
+            position: relative;
+            margin-top: 30px;
+        }
+    }
+}   
+
+@media (max-width:400px) {
+    body#computers {
+        margin-left: 0px;
+    }
+}
