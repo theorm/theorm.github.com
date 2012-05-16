@@ -8,11 +8,11 @@ body#landing{text-shadow:1px 1px 2px #b3b3b3;text-align:center;margin:0 auto;}bo
 body#landing .button:active{position:relative;top:1px;}
 body#landing .button.image:hover{background-color:#444444;}
 body#landing .button.image:active{-webkit-box-shadow:2px 3px 10px rgba(0, 0, 0, 0.4);-moz-box-shadow:2px 3px 10px rgba(0, 0, 0, 0.4);box-shadow:2px 3px 10px rgba(0, 0, 0, 0.4);}
-body#landing header{margin-top:10%;}body#landing header h1{font-size:39px;}
+body#landing header{margin-top:10%;}body#landing header h1{font-size:39px;line-height:1em;}
 body#landing header h2{margin-top:20px;font-size:19px;font-style:italic;font-weight:normal;color:#aaaaaa;}
 body#landing nav{margin-top:5%;font-size:19px;}body#landing nav ul li{width:110px;display:inline-block;list-style:none;margin:0 20px;}body#landing nav ul li a{width:80px;height:80px;margin-bottom:10px;}body#landing nav ul li a img{margin:8px;}
 body#landing nav ul li label{display:block;}
 body#landing nav ul li.and{font-style:italic;color:#aaaaaa;}
-body#computers{padding:10px;margin-left:15%;}body#computers header{margin-top:10%;}body#computers header h1{font-size:39px;}
+body#computers{padding:5px;margin-left:15%;}body#computers header{margin-top:10%;}body#computers header h1{font-size:39px;line-height:1em;}
 body#computers article{margin-top:5%;margin-left:30px;font-size:18px;}body#computers article ul li{line-height:30px;}
 @media (max-height:300px){body#landing footer{position:relative;margin-top:30px;}}@media (max-height:420px){body#computers footer{position:relative;margin-top:30px;}}@media (max-width:400px){body#computers{margin-left:0px;}}
