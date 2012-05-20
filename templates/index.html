@@ -6,17 +6,23 @@
 {% block page_id %}landing{% endblock %}
 
 {% block body %}
+<div itemscope itemtype="http://schema.org/Person">
 	<header>
-		<h1>Roman Kalyakin</h1>
+		<h1 itemprop="name">Roman Kalyakin</h1>
+		<meta itemprop="jobTitle" content="Software engineer"/>
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<meta itemprop="addressLocality" content="Brisbane" />
+			<meta itemprop="addressRegion"  content="Australia" />
+		</div>
 	</header>
 	<nav id="content">
 		<ul>
 			<li>
-				<a href="/computers" class="button image"><img src="/static/img/laptop64_w.png" alt="Computers button"/></a>
+				<a href="/computers" class="button image"><img src="/static/img/laptop64_w.png"/></a>
 				<label>Computers</label>
 			</li>
 			<li>
-				<a href="{{personal.links.photography}}" class="button image"><img src="/static/img/camera64_w.png" alt="Photography button"/></a>
+				<a href="{{personal.links.photography}}" class="button image"><img src="/static/img/camera64_w.png"/></a>
 				<label>Photography</label>
 			</li>
 		</ul>
@@ -24,4 +30,5 @@
 	<footer>
 		{% include "personal_links.html" %}		
 	</footer> 
+</div>
 {% endblock %}

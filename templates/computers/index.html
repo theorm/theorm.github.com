@@ -6,8 +6,14 @@
 {% block page_id %}computers{% endblock %}
 
 {% block body %}
+<div itemscope itemtype="http://schema.org/Person">
 	<header>
-		<h1>Roman Kalyakin</h1>
+		<h1 itemprop="name">Roman Kalyakin</h1>
+		<meta itemprop="jobTitle" content="Software engineer"/>
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<meta itemprop="addressLocality" content="Brisbane" />
+			<meta itemprop="addressRegion"  content="Australia" />
+		</div>
 	</header>
 	<article>
 		<ul>
@@ -25,4 +31,5 @@
 	<footer>
 		{% include "personal_links.html" %}
 	</footer>
+</div>
 {% endblock %}
