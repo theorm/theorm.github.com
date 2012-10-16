@@ -9,7 +9,7 @@ personal = {
         'twitter'       : 'http://twitter.com/theorm',
         'email'         : 'roman@kalyakin.com',
         'telephone'     : '+61 423 809 868',
-        'photography'   : 'http://theothermind.com/',
+        'photography'   : 'http://www.placefaraway.com/',
     },
     'projects' : {
         'Journeum'          : 'http://journeum.com',
