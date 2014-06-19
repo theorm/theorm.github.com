@@ -1,0 +1,185 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+a:active, a:hover, a:focus {
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 1em 2em;
+}
+
+#header-container {
+    text-align: center;
+}
+
+#header-container h1.title {
+    margin-bottom: 0.1em;
+    color: #555;
+}
+
+#header-container div.subtitle {
+    font-size: 1.1em;
+    color: #555;
+}
+
+article h1,
+article h2,
+article h3,
+article h4
+ {
+    margin: 0.3em 0;
+    text-transform: uppercase;
+    font-size: 1.0em;
+}
+
+article > header {
+    margin: 2em 0;
+}
+
+article > section {
+    margin: 2em 0;
+}
+
+em {
+    font-style: normal;
+    font-size: 1.05em;
+    color: #000;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+section.experience > .position {
+    margin: 2.5em 0;
+}
+
+.position h3 {
+    text-transform: none;
+    font-weight: bold;
+    color: #000;
+    font-size: 1.1em;
+}
+
+.position h3 .website {
+    font-size: 0.6em;
+    text-decoration: none;
+    color: #888;
+    margin-left: 1em;
+}
+
+.position .role {
+    font-size: 0.9em;
+    font-weight: bold;
+    display: block;
+    margin: 0.4em 0;
+}
+
+.position .timespan {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    float: right;
+}
+
+.position .activities {
+    margin-top: 1em;
+}
+
+.position .keywords {
+    padding-left: 0px;
+}
+
+.position .keywords li {
+    list-style: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: bold;
+    background-color: #eee;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.position .location {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #999;
+}
+
+footer .contacts {
+    text-align: center;
+    padding-left: none;
+}
+
+footer .contacts li {
+    font-style: none;
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0 0.3em;
+}
+
+footer .contacts li i {
+    color: #333;
+}
+
+footer .contacts .text-link {
+    display: none;
+}
+
+@media screen and (min-width: 720px) {
+    body {
+        width: 720px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    body {
+        margin: 0 1em;
+    }
+    .position .website {
+        float: right;
+        padding-top: 0.4em;
+    }
+    .position .timespan {
+        float: none;
+        width: 100%;
+        display: block;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+@media print {
+    footer .contacts {
+        text-align: left;
+        font-size: 0.6em;
+        padding-left: 0;
+    }
+    footer .contacts li {
+        display: block;
+        padding-left: 0;
+    }
+    footer .contacts a {
+        text-decoration: none;
+    }
+    footer .contacts .text-link {
+        display: inline;
+        margin-left: 0.8em;
+    }
+}
