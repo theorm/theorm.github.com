@@ -102,7 +102,7 @@ body#landing {
     }
 
     .btn {
-        color: @btnBackground;
+        color: @fontColor;
         display: inline-block;
         .fa {
             padding-top: 0.5em;
@@ -113,7 +113,7 @@ body#landing {
             }
         }
         &:hover {
-            color: lighten(@btnBackground, 10%);
+            color: lighten(@fontColor, 10%);
             font-size: floor(@baseFontSize + @baseFontSize * 0.6);
             -webkit-transition: all 0.1s;
                -moz-transition: all 0.1s;
@@ -197,6 +197,17 @@ body#computers {
         p {
             margin-top: 0.5em;
         }
+    }
+}
+
+.personal-links {
+    .fa {
+        width: 32px;
+        height: auto;
+        font-size: 2em;
+        float: left;
+        padding-top: 8px;
+        color: @fontColor;
     }
 }
 
