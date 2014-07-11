@@ -23,7 +23,7 @@ def compile_css():
 def compile_page(path):
     template = env.get_template(path)
     page = template.render(personal=personal)
-    
+
     dirname = os.path.dirname(path)
     if dirname and not os.path.exists(dirname):
         os.mkdir(dirname)
@@ -35,12 +35,12 @@ def compile_page(path):
 def compile_html():
     compile_page('index.html')
     compile_page('computers/index.html')
+    compile_page('cv.html')
 
 def compile():
     compile_css()
     compile_html()
-    
+
 def serve():
     local('python app.py')
 
-    
