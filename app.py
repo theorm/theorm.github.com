@@ -25,5 +25,9 @@ def index():
 def computers():
     return render_template('computers/index.html',personal=personal)
 
+@app.route('/cv')
+def cv():
+    return render_template('cv.html',personal=personal)
+
 if __name__ == '__main__':
     app.run(debug=True)

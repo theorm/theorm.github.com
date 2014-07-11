@@ -18,17 +18,20 @@
 	<nav id="content">
 		<ul>
 			<li>
-				<a href="/computers" class="button image"><img src="/static/img/laptop64_w.png" alt="I create"/></a>
+				<!-- <a href="/computers" class="button image"><img src="/static/img/laptop64_w.png" alt="I create"/></a> -->
+				<a href="/computers" alt="Software" class="btn"><i class="fa fa-laptop"></i></a>
+
 				<label>Software</label>
 			</li>
 			<li>
-				<a href="{{personal.links.photography}}" class="button image"><img src="/static/img/camera64_w.png" alt="I do"/></a>
-				<label>Photography</label>
+				<!-- <a href="{{personal.links.photography}}" class="button image"><img src="/static/img/camera64_w.png" alt="I do"/></a> -->
+				<a href="{{personal.links.photography}}" class="btn"><i class="fa fa-camera"></i></a>
+				<label>Multimedia</label>
 			</li>
 		</ul>
 	</nav>
 	<footer>
-		{% include "personal_links.html" %}		
-	</footer> 
+		{% include "personal_links.html" %}
+	</footer>
 </div>
 {% endblock %}

@@ -16,16 +16,10 @@
 		</div>
 	</header>
 	<article>
-		<ul>
-			<li>I create <em>rich web applications</em>, <em>APIs</em> and <em>backends</em>.</li>
-			<li>I use <em>Python</em>, <em>Javascript</em>, <em>NoSQL</em> and <a href="{{personal.links.cv}}" alt="Roman Kalyakin CV">a dozen of other technologies</a>.</li>
-			<li>I built 
-				{% for name,link in personal.projects.items() %}
-				<a href="{{link}}">{{name}}</a>{% if not loop.last %},{% endif %}
-				{% endfor %}
-				and can build <em>great software</em> for <em>you</em>.
-			</li>
-			<li>See my <em>code</em> on <a href="{{personal.links.github}}" alt="Roman Kalyakin on GitHub">GitHub</a> and <em>CV</em> on <a href="{{personal.links.cv}}">Careers</a>.</li>
+		<p>
+			I have developed numerous software products ranging from large scale multi-tier systems to startup MVPs. Passion for complex systems design, service oriented architecture, APIs, HTML5 and Multimedia.
+		</p>
+		<p>See my <em>code</em> on <a href="{{personal.links.github}}" alt="Roman Kalyakin on GitHub">GitHub</a> and <em>CV</em> <a href="/cv">here</a>.</p>
 		</ul>
 	</article>
 	<footer>

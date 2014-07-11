@@ -1,36 +1,37 @@
 @import "reset.less";
 @import "mixins.less";
 
-@import "fonts.less";
+// @import "fonts.less";
 
 @baseFontSize: 13px;
 @baseLineHeight: 1.6em;
 @btnBackground: #111;
 @footerHeight: 60px;
-@bgColor: #f4eee7;
+@bgColor: #fafafa;
 
 @fontColor: #111;
 @shadeColor: lighten(@fontColor,60%);
 @white: #fff;
 @linkColor: #BE1E2D;
 
-@xtraFont: 14px Arial-italic, sans-serif;
+// @xtraFont: 14px Arial-italic, sans-serif;
 
 body {
     background-color: @bgColor;
-    background-image: url('/static/img/squares.png');
-    font:  23px/26px AmaranthRegular, Verdana, sans-serif;
-    line-height: @baseLineHeight; 
+    // background-image: url('/static/img/squares.png');
+    font-family:  Roboto, sans-serif;
+    line-height: @baseLineHeight;
+    font-weight: 300;
     color: @fontColor;
     font-size: @baseFontSize;
-    
+
     em {
         font-style: normal;
         font-weight: bold;
         font-size: 1.1em;
         color: lighten(@fontColor, 20%);
     }
-    
+
     a {
         text-decoration: none;
         color: @linkColor;
@@ -73,9 +74,9 @@ footer {
 
 
 body#landing {
-    
-    text-shadow: 1px 1px 2px darken(@white,30%);
-    
+
+    // text-shadow: 1px 1px 2px darken(@white,30%);
+
     .button {
         background-color: @btnBackground;
     	display: inline-block;
@@ -84,28 +85,51 @@ body#landing {
         .box-shadow(3px 4px 10px rgba(0,0,0,.4));
     	&:hover {
         	text-decoration: none;
-    	}    	
+    	}
     	&:active {
         	position: relative;
         	top: 1px;
         }
-        
+
         &.image {
         	&:hover {
                 background-color: lighten(@btnBackground,20%);
             }
             &:active {
-                .box-shadow(2px 3px 10px rgba(0,0,0,.4));    	
-            }            
+                .box-shadow(2px 3px 10px rgba(0,0,0,.4));
+            }
         }
     }
-    
+
+    .btn {
+        color: @btnBackground;
+        display: inline-block;
+        .fa {
+            padding-top: 0.5em;
+            font-size: 3em;
+            &.fa-camera {
+                font-size: 2.5em;
+                padding-top: 0.7em;
+            }
+        }
+        &:hover {
+            color: lighten(@btnBackground, 10%);
+            font-size: floor(@baseFontSize + @baseFontSize * 0.6);
+            -webkit-transition: all 0.1s;
+               -moz-transition: all 0.1s;
+                -ms-transition: all 0.1s;
+                 -o-transition: all 0.1s;
+                    transition: all 0.1s;
+        }
+    }
+
     text-align: center;
     margin: 0 auto;
     header {
         margin-top: 10%;
         h1 {
-            font-size: floor(@baseFontSize * 3);
+            font-size: floor(@baseFontSize * 2);
+            font-weight: 300;
             line-height: 1em;
         }
         h2 {
@@ -117,7 +141,7 @@ body#landing {
         }
     }
     nav {
-        margin-top: 5%;
+        margin-top: 2%;
         font-size: floor(@baseFontSize * 1.5);
         ul {
             li {
@@ -131,7 +155,7 @@ body#landing {
                     img {
                         margin: 8px;
                     }
-                    margin-bottom: 10px;                    
+                    margin-bottom: 10px;
                 }
                 label {
                     display: block;
@@ -142,30 +166,38 @@ body#landing {
                 }
             }
         }
-    }    
-    
+    }
+
 }
 
 body#computers {
     padding: 5px;
-    margin-left: 15%;
+    // margin-left: 15%;
+    margin: 0 5%;
     header {
         margin-top: 10%;
         h1 {
-            font-size: floor(@baseFontSize * 3);
+            font-size: floor(@baseFontSize * 2);
             line-height: 1em;
+            text-align: center;
+            font-weight: 300;
         }
     }
     article {
-        margin-top: 5%;
-        margin-left: 30px;
+        padding-top: 5%;
+        margin: 0 auto;
+        max-width: 600px;
         font-size: floor(@baseFontSize * 1.4);
         ul {
             li {
                 line-height: 30px;
             }
         }
-    }    
+
+        p {
+            margin-top: 0.5em;
+        }
+    }
 }
 
 @media (max-height:300px) {
@@ -173,7 +205,7 @@ body#computers {
         footer {
             position: relative;
             margin-top: 30px;
-        }        
+        }
     }
 }
 
@@ -184,10 +216,10 @@ body#computers {
             margin-top: 30px;
         }
     }
-}   
+}
 
 @media (max-width:400px) {
     body#computers {
-        margin-left: 0px;
+        // margin-left: 0px;
     }
 }
