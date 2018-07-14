@@ -1,26 +1,32 @@
-from fabric.api import *
-from fabric.colors import green, red
+from fabric import task
+from termcolor import colored
 import os
+from invoke import Exit
 
 from jinja2 import Environment, PackageLoader
 env = Environment(loader=PackageLoader(__name__, 'templates'))
 
+
 from app import personal
 
-def check_requirement(command,install_text):
-    failed = False
-    with settings(warn_only=True):
-        if not local('which %s' % command,capture=True):
-            print red(install_text)
-            failed = True
-    if failed:
-        abort("Fix dependencies and try again")
+def green(*args):
+    return colored(args, 'green')
 
-def compile_css():
-    check_requirement('lessc','No "lessc" found. Install it with "npm install less@latest -g".')
-    local('lessc -x static/css/styles.less > static/css/style.css')
+def red(*args):
+    return colored(args, 'red')
 
-def compile_page(path):
+def check_requirement(c, command, install_text):
+    if not c.local('which %s' % command, warn=True):
+        print(red(install_text))
+        raise Exit("Fix dependencies and try again")
+
+@task
+def compile_css(c):
+    # check_requirement(c, 'lessc','No "lessc" found. Install it with "npm install less@latest -g".')
+    c.local('/usr/local/bin/node /usr/local/bin/lessc -x static/css/styles.less > static/css/style.css')
+
+@task
+def compile_page(c, path):
     template = env.get_template(path)
     page = template.render(personal=personal)
 
@@ -30,17 +36,19 @@ def compile_page(path):
     f = open(path,'w')
     f.write(page)
     f.close()
-    print 'compiled %s' % path
+    print('compiled %s' % path)
 
-def compile_html():
-    compile_page('index.html')
-    compile_page('computers/index.html')
-    compile_page('cv.html')
+@task
+def compile_html(c):
+    compile_page(c, 'index.html')
+    compile_page(c, 'computers/index.html')
+    compile_page(c, 'cv.html')
 
-def compile():
-    compile_css()
-    compile_html()
+@task
+def compile(c):
+    compile_css(c)
+    compile_html(c)
 
-def serve():
-    local('python app.py')
-
+@task
+def serve(c):
+    c.local('python app.py')
